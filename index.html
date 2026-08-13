@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex - Gestor de Pokémon</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Gestor de Pokémon</h1>
+    <p>Agrega, edita y gestiona tus Pokémon favoritos</p>
+  </header>
+  
+  <main class="container">
+    <!-- Próximas secciones -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- Formulario para Agregar / Editar -->
+    <section class="form-section">
+      <h2 id="form-title">Agregar Nuevo Pokémon</h2>
+      <form id="pokemon-form">
+        <input type="hidden" id="pokemon-id">
+
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" placeholder="Ej: Pikachu" required>
+        </div>
+
+        <div class="form-group">
+          <label for="image">URL de la Imagen</label>
+          <input type="url" id="image" placeholder="https://..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="type">Tipo</label>
+          <input type="text" id="type" placeholder="Ej: Eléctrico" required>
+        </div>
+
+        <div class="stats-grid">
+          <div class="form-group">
+            <label for="hp">Vida (HP)</label>
+            <input type="number" id="hp" min="1" max="999" placeholder="35" required>
+          </div>
+
+          <div class="form-group">
+            <label for="attack">Ataque</label>
+            <input type="number" id="attack" min="1" max="999" placeholder="55" required>
+          </div>
+
+          <div class="form-group">
+            <label for="defense">Defensa</label>
+            <input type="number" id="defense" min="1" max="999" placeholder="40" required>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Guardar Pokémon</button>
+          <button type="button" id="cancel-btn" class="btn btn-secondary hidden">Cancelar Edición</button>
+        </div>
+      </form>
+    </section>
