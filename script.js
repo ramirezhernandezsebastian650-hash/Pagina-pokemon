@@ -97,3 +97,40 @@ pokemonForm.addEventListener('submit', (e) => {
   resetForm();
   renderPokemons();
 });
+// Cargar datos en el formulario para modificar
+function editPokemon(id) {
+  const pokemon = pokemons.find(p => p.id === id);
+  if (!pokemon) return;
+
+  pokemonIdInput.value = pokemon.id;
+  nameInput.value = pokemon.name;
+  imageInput.value = pokemon.image;
+  typeInput.value = pokemon.type;
+  hpInput.value = pokemon.hp;
+  attackInput.value = pokemon.attack;
+  defenseInput.value = pokemon.defense;
+
+  formTitle.textContent = "Editar Pokémon";
+  submitBtn.textContent = "Actualizar Pokémon";
+  cancelBtn.classList.remove('hidden');
+}
+
+// Eliminar un Pokémon por ID
+function deletePokemon(id) {
+  pokemons = pokemons.filter(p => p.id !== id);
+  renderPokemons();
+}
+
+// Limpiar inputs del formulario
+function resetForm() {
+  pokemonForm.reset();
+  pokemonIdInput.value = '';
+  formTitle.textContent = "Agregar Nuevo Pokémon";
+  submitBtn.textContent = "Guardar Pokémon";
+  cancelBtn.classList.add('hidden');
+}
+
+cancelBtn.addEventListener('click', resetForm);
+
+// Carga inicial
+renderPokemons();
